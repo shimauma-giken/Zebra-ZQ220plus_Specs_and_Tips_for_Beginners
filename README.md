@@ -101,14 +101,14 @@ ezpl.head_close_action : feed , Choices: feed,no motion
 #### 設定コマンド（例）
 
 ```
-! U1 getvar "bluetooth.discoverable" "on"
-! U1 getvar "bluetooth.minimum_security_mode" "2"
-! U1 getvar "media.sense_mode" "gap"
-! U1 getvar "media.type" "label"
-! U1 getvar "print.tone" "100"
-! U1 getvar "print.print_adj" "0"
-! U1 getvar "ezpl.power_up_action" "no motion"
-! U1 getvar "ezpl.head_close_action" "feed"
+! U1 setvar "bluetooth.discoverable" "on"
+! U1 setvar "bluetooth.minimum_security_mode" "2"
+! U1 setvar "media.sense_mode" "gap"
+! U1 setvar "media.type" "label"
+! U1 setvar "print.tone" "100"
+! U1 setvar "print.print_adj" "0"
+! U1 setvar "ezpl.power_up_action" "no motion"
+! U1 setvar "ezpl.head_close_action" "feed"
 ```
 
 <br>
