@@ -156,6 +156,11 @@ ZQ220 plusが対応しているラベルは下記の通り。
 
 [Google Play: Zlabel Designer](https://play.google.com/store/apps/details?id=com.zlabel.designer)
 
+[Zlabelで新規ZQ220+プリンタをペアリングする方法](https://github.com/shimauma-giken/Zebra-Printer_Pair-ZQ220plus-with-Zlabel)
+
+[ZQ200 デモガイド（簡易版）](https://github.com/shimauma-giken/Zebra-Printer_ZQ200_Demo_Guide)
+
+
 <br>
 <br>
 
