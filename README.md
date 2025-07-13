@@ -261,6 +261,68 @@ PRINT
 <br>
 <br>
 
+
+### 日本語印字が適切に印刷できないときの確認ポイント
+
+日本語印刷時に空白や文字化けが発生する場合は、下記のポイントをご確認ください。
+
+1. フォントがインストールされていることを確認する。  
+
+   ```
+   Allcv結果からGT16とGT24フォントが存在することを確認する。
+
+   ! U1 getvar "allcv"
+   ...
+   file.
+   file.dir :   Directory
+   LOWPOWER.WML       189
+   INDEX   .WML       853
+   INFO_TIM.WML       426
+   INFO_ACK.WML       393
+   CONFIG  .WML      3488
+   ICON    .CPF      5084
+   NSMTTC16.CPF    909344
+   DEJAVU12.CPF      5323
+   DEJAVU14.CPF      7001
+   DEJAVU16.CPF      8183
+   DEJAVU20.CPF     10288
+   SWIS721 .CSF     22219
+   GT16NF55.CPF    310456 ★
+   GT24NF55.CPF    606448 ★
+   2KEY    .TXT      1967
+   12388000 Bytes Free
+   ...
+   ""
+   ```
+   </br>
+
+1. CPCLコードに誤りがないか確認する。
+   </br>
+
+1. CPCLコードがShift-JIS形式でプリンタに送付されていることを確認する。
+   - 「ファイルで送信」の場合はS-JIS形式で保存されているか。
+   -  アプリから送信の場合は、SJISで送信されているか。
+      ```java
+      // Convert to Shift-JIS in case of using Japanese fonts.
+                    thePrinterConn.write(cpclData.getBytes("Shift-JIS"));
+      ```
+   </br>
+1. "TEXT GT24NF55.CPF" の形式でCPCLを記述する。
+
+   ```
+   # "T 5x"の記述方法より下記の記述方法の方が望ましい。 
+
+   ! 0 200 200 600 1
+   COUNTRY JAPAN-S
+   TEXT GT16NF55.CPF 0 0 0 日本語ゴシック、サイズ 2mm
+   TEXT GT24NF55.CPF 0 0 30 日本語ゴシック、サイズ 3mm
+   PRINT
+   ```
+
+   </br>
+   </br>
+
+
 ### 参考文献
 
 [CPCL Programming Guide for link-OS enabled Printer](https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/software/cpcl-link-os-pg-en.pdf)
