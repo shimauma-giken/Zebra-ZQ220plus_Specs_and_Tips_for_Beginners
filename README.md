@@ -82,50 +82,43 @@ ZQ220の特徴や設定方法について、短時間で概要を要領よく理
 <br>
 <br>
 
-#### 一般的な運用でよく利用する設定項目
+### プリンタの基本設定
 
-```
-bluetooth.discoverable : on , Choices: on,off
-bluetooth.minimum_security_mode : 2 , Choices: 2,4
-media.sense_mode : bar , Choices: gap,bar
-media.type : label , Choices: journal,label
-print.tone : 100 , Choices: -100-200
-print.print_adj : 0 , Choices: -30-30
-ezpl.power_up_action : no motion , Choices: feed,no motion
-ezpl.head_close_action : feed , Choices: feed,no motion
-```
+ZQ220+ を設定する場合、まず下記設定を実施することをお勧めします。
 
-<br>
-<br>
+| 設定 | パラメータ（例）   | パラメータ（範囲、選択肢）    | 説明 |
+|-|:-:|:-:|-|
+| bluetooth.minimum_security_mode |  2  |    2,4 | Bluetoothのセキュリティレベル
+| bluetooth.discoverable |  on  |    on,off | BluetoothのDicovery可否
+| bluetooth.le.controller_mode |  both  |    both,classic,le | Bluetoothの接続先端末の設定
+| media.sense_mode |  bar  |    gap,bar | 用紙設定（センサー検知設定）
+| media.tof |  0  |    -400-400 | 用紙設定（ラベル停止位置設定）
+| media.type |  label  |    journal,label | 用紙設定（用紙タイプ）
+| media.speed |  3  |    3 | 用紙の搬送速度(単位：ips)
+| media.feed_length |  1200  |    25-65535 | 用紙のフィード量(単位：dots)
+| print.tone |  0  |    -100-200 | 印刷濃度設定
 
-#### 設定コマンド（例）
 
-```
-! U1 setvar "bluetooth.discoverable" "on"
-! U1 setvar "bluetooth.minimum_security_mode" "2"
-! U1 setvar "media.sense_mode" "gap"
-! U1 setvar "media.type" "label"
-! U1 setvar "print.tone" "100"
-! U1 setvar "print.print_adj" "0"
-! U1 setvar "ezpl.power_up_action" "no motion"
-! U1 setvar "ezpl.head_close_action" "feed"
-```
+#### 設定方法
 
-<br>
-<br>
+- 構文  
 
-##### 設定確認コマンド
+    ```java
+    ! U1 setvar [設定] [パラメータ] [CR/LF]
+    ```
 
-```
-! U1 getvar "bluetooth.discoverable"
-! U1 getvar "bluetooth.minimum_security_mode"
-! U1 getvar "media.sense_mode"
-! U1 getvar "media.type"
-! U1 getvar "print.tone"
-! U1 getvar "print.print_adj"
-! U1 getvar "ezpl.power_up_action"
-! U1 getvar "ezpl.head_close_action"
-```
+- 構文例  
+
+    ```java
+    ! U1 setvar "media.type" "label"
+    ! U1 setvar "print.tone" "50"
+
+    設定値の確認はallcvで確認すること。
+    ! U1 getvar "allcv"
+    
+    ```
+
+
 
 <br>
 <br>
@@ -179,7 +172,7 @@ ZQ220 plusが対応しているラベルは下記の通り。
    | フォントファイル | 概要                            | 入手方法                             |
    | ---------------- | ------------------------------- | ------------------------------------ |
    | JIS.DAT          | Shift-JIS用テーブル             | zebra.comからDL可能                  |
-   | GT16NF55.CPF     | 固定長フォント（2mm）、ゴシック | 有償フォント                         |
+   | GT16NF55.CPF     | 固定長フォント（2mm）、ゴシック | プリンタにプレインストールされている                         |
    | GT16NF55.CPF     | 固定長フォント（3mm）、ゴシック | プリンタにプレインストールされている |
 
 
