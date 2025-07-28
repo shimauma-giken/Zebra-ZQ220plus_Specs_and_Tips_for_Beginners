@@ -15,11 +15,12 @@ ZQ220の特徴や設定方法について、短時間で概要を要領よく理
 <img width="500" src="https://www.link.com.bo/wp-content/uploads/2020/09/zq220-2.jpg">
 
 1. 特徴・機能
-2. 機器の基本的な操作方法
-3. 基本設定の手順
-4. 用紙の調整（キャリブレーション）
-5. デモツール
-6. 日本語の印刷方法（CPCL）
+1. 機器の基本的な操作方法
+1. 基本設定の手順
+1. 用紙の調整（キャリブレーション）
+1. デモツール
+1. 日本語の印刷方法（CPCL）
+1. プリンタ設定を工場出荷に戻す手順
 1. 参考文献
 
 <br>
@@ -173,7 +174,9 @@ ZQ220 plusが対応しているラベルは下記の通り。
    | ---------------- | ------------------------------- | ------------------------------------ |
    | JIS.DAT          | Shift-JIS用テーブル             | zebra.comからDL可能                  |
    | GT16NF55.CPF     | 固定長フォント（2mm）、ゴシック | プリンタにプレインストールされている                         |
-   | GT16NF55.CPF     | 固定長フォント（3mm）、ゴシック | プリンタにプレインストールされている |
+   | GT24NF55.CPF     | 固定長フォント（3mm）、ゴシック | プリンタにプレインストールされている |
+
+   ※ フォントは整数倍の拡大が可能です。（縮小は不可）
 
 
    <br>
@@ -184,23 +187,14 @@ ZQ220 plusが対応しているラベルは下記の通り。
    ! U1 getvar "file.dir"
 
    "  Directory
-   LOWPOWER.WML       189
-   INDEX   .WML       853
-   INFO_TIM.WML       426
-   INFO_ACK.WML       393
-   CONFIG  .WML      3488
-   ICON    .CPF      5084
-   NSMTTC16.CPF    909344
-   DEJAVU12.CPF      5323
-   DEJAVU14.CPF      7001
-   DEJAVU16.CPF      8183
-   DEJAVU20.CPF     10288
+   ....
    SWIS721 .CSF     22219
    GT16NF55.CPF    310456 ★
    GT24NF55.CPF    606448 ★
    JIS     .DAT     28232 ★
    8208000 Bytes Free
    ```
+
 2. 日本語フォント（CPF）を用いて印刷するCPCLコードは下記の通り。
 
    <br>
@@ -314,6 +308,23 @@ PRINT
 
    </br>
    </br>
+
+### プリンタ設定を工場出荷に戻す手順
+
+1. 下記設定を実施します。
+
+   ```
+   ! U1 setvar "device.restore_defaults" "display"
+   ! U1 setvar "device.restore_defaults" "power"
+   ! U1 setvar "device.restore_defaults" "bluetooth"
+   ! U1 setvar "device.restore_defaults" "media"
+   ```
+
+1. 再起動後に初期化設定が有効化されます。
+
+   ```
+   ! U1 do "device.reset" ""
+   ```
 
 
 ### 参考文献
