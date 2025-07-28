@@ -318,12 +318,14 @@ PRINT
    ! U1 setvar "device.restore_defaults" "power"
    ! U1 setvar "device.restore_defaults" "bluetooth"
    ! U1 setvar "device.restore_defaults" "media"
+
    ```
 
 1. 再起動後に初期化設定が有効化されます。
 
    ```
    ! U1 do "device.reset" ""
+   
    ```
 
 
