@@ -21,7 +21,8 @@ ZQ220の特徴や設定方法について、短時間で概要を要領よく理
 1. デモツール
 1. 日本語の印刷方法（CPCL）
 1. プリンタ設定を工場出荷に戻す手順
-1. 参考文献
+2. アプリケーションソフトの開発手順
+3. 参考文献
 
 <br>
 <br>
@@ -327,7 +328,15 @@ PRINT
    ! U1 do "device.reset" ""
    
    ```
+</br>
 
+### アプリケーションソフトの開発手順
+
+ZQ220+はAndroid向けSDKが公開されている。詳細は下記リンクを参照。
+
+[ZQ220+開発ガイド_Android 14向け (ZQ220p + Forerunner Android SDK v1.1）](https://github.com/shimauma-giken/Zebra-Printer_Android-Demo-Print-Apk-via-Bluetooth-Classic-Java-for-ZQ220pv3.00)
+
+</br>
 
 ### 参考文献
 
