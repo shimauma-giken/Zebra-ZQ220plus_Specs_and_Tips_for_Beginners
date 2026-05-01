@@ -338,7 +338,7 @@ PRINT
 
 ZQ220+はAndroid向けSDKが公開されている。詳細は下記リンクを参照。
 
-[ZQ220+開発ガイド_Android 14向け (ZQ220p + Forerunner Android SDK v1.1）](https://github.com/shimauma-giken/Zebra-Printer_Android-Demo-Print-Apk-via-Bluetooth-Classic-Java-for-ZQ220pv3.00)
+[LInk](https://github.com/shimauma-giken/Zebra-Printer_Android-Demo-Print-Apk-via-Bluetooth-Classic-Java-for-ZQ220p_v4.00)
 
 </br>
 
